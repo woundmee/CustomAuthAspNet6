@@ -24,20 +24,20 @@ public class HomeController : Controller
 
 
 
-    [Authorize]  // ТЕПЕРЬ СЮДА МОГУТ ЗАХОДИТЬ ТОЛЬКО ВОШЕДШИЙ ПОЛЬЗОВАТЕЛЬ
+    [Authorize]  // Доступ только для авторизованных пользователей!
     public IActionResult Privacy()
     {
         return View();
     }
 
-    [Authorize]  // ТЕПЕРЬ СЮДА МОГУТ ЗАХОДИТЬ ТОЛЬКО ВОШЕДШИЙ ПОЛЬЗОВАТЕЛЬ
+    [Authorize]  // Доступ только для авторизованных пользователей!
     public IActionResult About()
     {
         return View();
     }
 
 
-    // Выход из пользователя
+    // Завершение сеанса пользователя (logout)
     public async Task<IActionResult> LogOut()
     {
         // Если вышел из аккаунта -> перенаправить на страницу входа
