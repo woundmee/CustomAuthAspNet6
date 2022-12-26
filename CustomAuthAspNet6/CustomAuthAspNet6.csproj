@@ -6,4 +6,10 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Views\Access\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Access\" />
+  </ItemGroup>
 </Project>

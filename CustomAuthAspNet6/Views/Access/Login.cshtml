@@ -1,0 +1,42 @@
+﻿<!-- ПОДКЛЮЧАЕМ МОДЕЛЬ -->
+@model CustomAuthAspNet6.Models.VMLogin
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Login</title>
+</head>
+
+<body>
+
+    <!-- СОЗДАЕМ ФОРМУ -->
+    <form asp-controller="Access" asp-action="Login" method="post">
+        <h1>Login</h1>
+        <input type="email" placeholder="Email" asp-for="Email" />
+        <input type="password" placeholder="Password" asp-for="Password" />  <!-- asp-for="" - берем из модели! -->
+
+        <label>
+            <input type="checkbox" asp-for="isKeepLoggedIn" />
+            Keep me logged In
+        </label>
+
+        <button type="submit">Login</button>
+
+        @if (ViewData["ValidateMessage"] != null) // ПРОВЕРКА
+        {
+            <br />
+            <br />
+            <label>@ViewData["ValidateMessage"]</label>
+        }
+
+    </form>
+
+
+</body>
+
+</html>
